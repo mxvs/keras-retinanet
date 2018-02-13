@@ -113,8 +113,8 @@ class PascalVocGenerator(Generator):
         return read_image_bgr(path)
 
     def __parse_annotation(self, element):
-        truncated = _findNode(element, 'truncated', parse=int)
-        difficult = _findNode(element, 'difficult', parse=int)
+        truncated = 0
+        difficult = 0
 
         class_name = _findNode(element, 'name').text
         if class_name not in self.classes:
